@@ -1,8 +1,14 @@
 import React from 'react'
+import Caraousel from '../components/Home/Caraousel'
+import EventTerdekat from "../components/Home/EventTerdekat";
+
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Caraousel />
+      <EventTerdekat />
+    </div>
   )
 }
 
