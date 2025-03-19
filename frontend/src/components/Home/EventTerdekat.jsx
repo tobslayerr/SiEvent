@@ -22,7 +22,7 @@ const EventTerdekat = () => {
     <div className="max-w-6xl mx-auto px-4 pt-8">
       <div className="flex justify-between items-center mb-5">
         <h2 className="text-2xl font-bold">Event Terdekat</h2>
-        <button className="border border-black rounded-md px-4 sm:px-5 py-1.5 sm:py-2 font-medium text-black text-xs sm:text-sm w-[80px] sm:w-[95px] transition hover:bg-black hover:text-white active:scale-90 duration-300">
+        <button className="border border-black rounded-md px-4 sm:px-5 py-1.5 sm:py-2 font-medium text-black text-xs sm:text-sm w-[90px] sm:w-[95px] transition hover:bg-black hover:text-white active:scale-90 duration-300">
           View All
         </button>
       </div>
