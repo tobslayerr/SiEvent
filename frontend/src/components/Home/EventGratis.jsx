@@ -14,9 +14,13 @@ const EventGratis = () => {
       
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
           {events.map((event) => (
-            <div key={event.id} className="bg-white p-4 sm:p-5 rounded-lg shadow h-48 sm:h-56 flex flex-col justify-between">
-              <img src={event.image} alt={event.title} className="w-full h-28 sm:h-32 object-cover rounded-md mb-3" />
-              <div className="text-center sm:text-left space-y-1">
+            <div key={event.id} className="bg-white p-4 sm:p-5 rounded-lg shadow flex flex-col h-auto">
+              <img 
+                src={event.image} 
+                alt={event.title} 
+                className="w-full h-28 sm:h-36 object-cover rounded-md"
+              />
+              <div className="text-center sm:text-left space-y-1 mt-3">
                 <h3 className="text-sm sm:text-base font-semibold">{event.title}</h3>
                 <p className="text-xs sm:text-sm text-gray-600">
                   Tipe event: <span className="text-blue-600 font-medium">{event.type}</span>
@@ -27,7 +31,7 @@ const EventGratis = () => {
         </div>
       
         <div className="flex justify-center mt-8">
-          <button className="border border-black px-6 py-3 rounded-md text-sm font-medium hover:bg-black hover:text-white transition duration-300 active:scale-90">
+          <button className="border border-black px-6 py-3 rounded-md text-sm font-medium hover:bg-black hover:text-white transition duration-300 active:scale-95">
             Selengkapnya
           </button>
         </div>
