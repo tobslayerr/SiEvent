@@ -1,14 +1,23 @@
-import React from "react";
-
-const events = [
-  { id: 1, title: "Lorem Ipsum", mulai: "Mulai 21 Maret 2025", image: "src/images/image4.jpg" },
-  { id: 2, title: "Lorem Doro", mulai: "Mulai 24 Maret 2025", image: "src/images/image4.jpg" },
-  { id: 3, title: "Lorem Foro", mulai: "Mulai 18 Maret 2025", image: "src/images/image4.jpg" },
-  { id: 4, title: "Lorem Goro", mulai: "Mulai 19 Maret 2025", image: "src/images/image4.jpg" },
-  { id: 5, title: "Lorem Koro", mulai: "Mulai 22 Maret 2025", image: "src/images/image4.jpg" },
-];
+import { useState, useEffect } from "react";
 
 const EventTerdekat = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const dummyData = [
+        { id: 1, title: "Lorem Ipsum", mulai: "Mulai 21 Maret 2025", image: "/images/image4.jpg" },
+        { id: 2, title: "Lorem Doro", mulai: "Mulai 24 Maret 2025", image: "/images/image4.jpg" },
+        { id: 3, title: "Lorem Foro", mulai: "Mulai 18 Maret 2025", image: "/images/image4.jpg" },
+        { id: 4, title: "Lorem Goro", mulai: "Mulai 19 Maret 2025", image: "/images/image4.jpg" },
+        { id: 5, title: "Lorem Koro", mulai: "Mulai 22 Maret 2025", image: "/images/image4.jpg" },
+      ];
+      setEvents(dummyData);
+    };
+
+    fetchEvents();
+  }, []);
+
   return (
     <div className="max-w-6xl mx-auto px-4 pt-8">
       <div className="flex justify-between items-center mb-5">
