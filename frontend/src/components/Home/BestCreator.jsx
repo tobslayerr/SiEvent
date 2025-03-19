@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 
 const creators = [
-  { id: 1, name: "Lorem Ipsum Lorem", image: "/images/profile.jpg", followers: "1.290", rating: "4.9" },
-  { id: 2, name: "Lorem Ipsum Lorem", image: "/images/profile.jpg", followers: "1.290", rating: "4.9" },
-  { id: 3, name: "Lorem Ipsum Lorem", image: "/images/profile.jpg", followers: "1.290", rating: "4.9" },
-  { id: 4, name: "Lorem Ipsum Lorem", image: "/images/profile.jpg", followers: "1.290", rating: "4.9" },
+  { id: 1, name: "Lorem Ipsum Lorem", image: "/images/profile.jpg", followers: "1,290", rating: "4.9" },
+  { id: 2, name: "Lorem Ipsum Lorem", image: "/images/profile.jpg", followers: "1,290", rating: "4.9" },
+  { id: 3, name: "Lorem Ipsum Lorem", image: "/images/profile.jpg", followers: "1,290", rating: "4.9" },
+  { id: 4, name: "Lorem Ipsum Lorem", image: "/images/profile.jpg", followers: "1,290", rating: "4.9" },
 ];
 
 const BestCreator = () => {
@@ -28,11 +28,13 @@ const BestCreator = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
+            whileHover={{ scale: 1.05 }}
           >
             <img
               src={creator.image}
-              alt={creator.name}
+              alt={creator.name || "Creator Profile"}
               className="w-20 h-20 object-cover rounded-full mb-3"
+              loading="lazy"
             />
             <h3 className="text-sm font-semibold">{creator.name}</h3>
             <div className="flex items-center justify-center gap-2 mt-1 text-xs sm:text-sm text-gray-600">
@@ -46,6 +48,7 @@ const BestCreator = () => {
               className="mt-3 bg-black text-white px-4 py-2 rounded-md text-xs font-medium hover:bg-gray-800 transition duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              aria-label={`Follow ${creator.name}`}
             >
               Follow
             </motion.button>
@@ -58,6 +61,7 @@ const BestCreator = () => {
           className="border border-black px-6 py-3 rounded-md text-sm font-medium hover:bg-black hover:text-white transition duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          aria-label="Lihat selengkapnya"
         >
           Selengkapnya
         </motion.button>
@@ -65,4 +69,6 @@ const BestCreator = () => {
     </motion.div>
   );
 };
+
 export default BestCreator;
+
