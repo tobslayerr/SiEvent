@@ -23,16 +23,18 @@ const EventGratis = () => {
         {events.map((event, index) => (
           <motion.div
             key={event.id}
-            className="bg-white p-4 sm:p-5 rounded-lg shadow flex flex-col h-auto"
+            className="bg-white p-4 sm:p-5 rounded-lg shadow flex flex-col h-auto cursor-pointer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
+            whileHover={{ scale: 1.05 }}
           >
             <img
               src={event.image}
-              alt={event.title}
+              alt={event.title || "Event Image"}
               className="w-full h-28 sm:h-36 object-cover rounded-md"
+              loading="lazy"
             />
             <div className="text-center sm:text-left space-y-1 mt-3">
               <h3 className="text-sm sm:text-base font-semibold">{event.title}</h3>
@@ -49,6 +51,7 @@ const EventGratis = () => {
           className="border border-black px-6 py-3 rounded-md text-sm font-medium hover:bg-black hover:text-white transition duration-300 active:scale-95"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          aria-label="Lihat selengkapnya"
         >
           Selengkapnya
         </motion.button>
@@ -58,4 +61,3 @@ const EventGratis = () => {
 };
 
 export default EventGratis;
-
