@@ -32,7 +32,7 @@ const Navbar = () => {
     
   return (
     <>
-      <div className={`fixed top-2 left-1/2 w-full transform -translate-x-1/2 px-9 py-4 flex items-center justify-between rounded-lg shadow-lg backdrop-blur-md transition-all duration-300 z-50 max-w-6xl min-h-[75.5px] ${isScrolled ? "bg-inherit" : "bg-gray-200 bg-opacity-100"}`}>
+      <div className={`fixed z-50 top-2 left-1/2 w-full transform -translate-x-1/2 px-9 py-4 flex items-center justify-between rounded-lg shadow-lg backdrop-blur-md transition-all duration-300 max-w-6xl min-h-[75.5px] ${isScrolled ? "bg-inherit" : "bg-gray-200 bg-opacity-100"}`}>
         <Link to="/" className="flex items-center active:scale-90 duration-400">
           <FaTicketAlt className="text-xl text-black" />
         </Link>
