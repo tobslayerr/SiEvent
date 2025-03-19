@@ -48,7 +48,7 @@ const EventGratis = () => {
 
       <div className="flex justify-center mt-8">
         <motion.button
-          className="border border-black px-6 py-3 rounded-md text-sm font-medium hover:bg-black hover:text-white transition duration-300 active:scale-95"
+          className="border border-black px-6 py-3 rounded-md text-sm font-medium hover:bg-black hover:text-white transition duration-300 active:scale-90"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           aria-label="Lihat selengkapnya"
