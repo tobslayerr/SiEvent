@@ -45,7 +45,7 @@ const BestCreator = () => {
               </span>
             </div>
             <motion.button
-              className="mt-3 bg-black text-white px-4 py-2 rounded-md text-xs font-medium hover:bg-gray-800 transition duration-300"
+              className="mt-3 bg-black text-white px-4 py-2 rounded-md text-xs font-medium hover:bg-gray-800 transition duration-300 active:scale-90"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label={`Follow ${creator.name}`}
