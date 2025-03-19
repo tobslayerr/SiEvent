@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const EventTerdekat = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([])
 
   useEffect(() => {
     const fetchEvents = async () => {
