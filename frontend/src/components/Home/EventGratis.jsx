@@ -1,13 +1,63 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const events = [
-    { id: 1, title: "Lorem Ipsum Lorem", type: "Seminar",  image: "/images/image4.jpg" },
-    { id: 2, title: "Lorem Ipsum Lorem", type: "Konser",  image: "/images/image4.jpg" },
-    { id: 3, title: "Lorem Ipsum Lorem", type: "Workshop",  image: "/images/image4.jpg" },
-    { id: 4, title: "Lorem Ipsum Lorem", type: "Pameran",  image: "/images/image4.jpg" },
-]
+  { id: 1, title: "Lorem Ipsum Lorem", type: "Seminar", image: "/images/image4.jpg" },
+  { id: 2, title: "Lorem Ipsum Lorem", type: "Konser", image: "/images/image4.jpg" },
+  { id: 3, title: "Lorem Ipsum Lorem", type: "Workshop", image: "/images/image4.jpg" },
+  { id: 4, title: "Lorem Ipsum Lorem", type: "Pameran", image: "/images/image4.jpg" },
+];
 
 const EventGratis = () => {
+
+  return (
+    <motion.div
+      className="max-w-[90%] sm:max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8 bg-gray-100 shadow-lg rounded-2xl mt-10"
+      initial={{ opacity: 0, scale: 0.9, y: 50 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+    >
+      <h2 className="text-2xl font-bold text-center mb-8">Event Gratis</h2>
+
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+        {events.map((event, index) => (
+          <motion.div
+            key={event.id}
+            className="bg-white p-4 sm:p-5 rounded-lg shadow flex flex-col h-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: index * 0.1 }}
+          >
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full h-28 sm:h-36 object-cover rounded-md"
+            />
+            <div className="text-center sm:text-left space-y-1 mt-3">
+              <h3 className="text-sm sm:text-base font-semibold">{event.title}</h3>
+              <p className="text-xs sm:text-sm text-gray-600">
+                Tipe event: <span className="text-blue-600 font-medium">{event.type}</span>
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="flex justify-center mt-8">
+        <motion.button
+          className="border border-black px-6 py-3 rounded-md text-sm font-medium hover:bg-black hover:text-white transition duration-300 active:scale-95"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Selengkapnya
+        </motion.button>
+      </div>
+    </motion.div>
+  );
+};
+
     return (
         <div className="max-w-[90%] sm:max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8 bg-gray-100 shadow-lg rounded-2xl mt-10">
         <h2 className="text-2xl font-bold text-center mb-8">Event Gratis</h2>
