@@ -21,9 +21,13 @@ const BestCreator = () => {
               className="w-20 h-20 object-cover rounded-full mb-3"
             />
             <h3 className="text-sm font-semibold">{creator.name}</h3>
-            <p className="text-xs text-gray-600 flex items-center gap-1 mt-1">
-              {creator.followers} followers • <FaStar className="text-yellow-500" /> {creator.rating}
-            </p>
+            <div className="flex items-center justify-center gap-2 mt-1 text-xs sm:text-sm text-gray-600">
+              <span>{creator.followers} followers</span>
+              <span className="flex items-center gap-1">
+                <FaStar className="text-yellow-500 text-xs sm:text-sm" />
+                {creator.rating}
+              </span>
+            </div>
             <button className="mt-3 bg-black text-white px-4 py-2 rounded-md text-xs font-medium hover:bg-gray-800 transition duration-300 active:scale-90">
               Follow
             </button>
