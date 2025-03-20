@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaSearch, FaTicketAlt, FaBars, FaTimes, FaChevronRight } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +26,10 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
   return (
     <>
       <div
@@ -64,12 +68,14 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center space-x-3">
-          <button className="border border-black rounded-full px-5 py-2 font-medium text-black text-sm transition hover:bg-black hover:text-white active:scale-90 duration-300">
+          <Link to="/register" className="border border-black rounded-full px-5 py-2 font-medium text-black text-sm transition hover:bg-black hover:text-white active:scale-90 duration-300 flex justify-center items-center"
+          >
             Register
-          </button>
-          <button className="bg-black text-white rounded-full px-5 py-2 font-medium text-sm transition hover:bg-gray-200 hover:text-black hover:border hover:border-black active:scale-90 duration-300">
-            Login
-          </button>
+          </Link>
+          <Link to="/login" className="bg-black text-white rounded-full px-5 py-2 font-medium text-sm transition hover:bg-gray-200 hover:text-black hover:border hover:border-black active:scale-90 duration-300"
+          >
+           Login
+          </Link>
         </div>
 
         <button
@@ -132,12 +138,18 @@ const Navbar = () => {
         </div>
 
         <div className="mt-6 flex justify-between">
-          <button className="w-1/2 border border-black text-black py-2 rounded-full font-medium transition hover:bg-black hover:text-white active:scale-90 duration-300">
-            Register
-          </button>
-          <button className="w-1/2 bg-black text-white py-2 rounded-full font-medium transition hover:bg-gray-200 hover:text-black border border-black ml-2 active:scale-90 duration-300">
-            Login
-          </button>
+          <Link 
+           to="/register" 
+           className="w-1/2 border border-black text-black py-2 rounded-full font-medium transition hover:bg-black hover:text-white active:scale-90 duration-300 flex justify-center items-center"
+          >
+           Register
+          </Link>
+          <Link 
+           to="/login" 
+           className="w-1/2 bg-black text-white py-2 rounded-full font-medium transition hover:bg-gray-200 hover:text-black border border-black ml-2 active:scale-90 duration-300 flex justify-center items-center"
+          >
+           Login
+          </Link>
         </div>
       </div>
     </>
