@@ -38,13 +38,14 @@ const EventTerdekat = () => {
         {events.map((event, index) => (
           <motion.div
             key={event.id}
-            className={`bg-white rounded-lg shadow-md overflow-hidden ${
+            className={`bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition duration-300 transform ${
               index === 4 ? "hidden sm:block md:block lg:block xl:block" : ""
             }`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
+            whileTap={{ scale: 0.98, transition: { duration: 0.0 } }}
           >
             <img src={event.image} alt={event.title} className="w-full h-40 object-cover" />
             <div className="p-3">

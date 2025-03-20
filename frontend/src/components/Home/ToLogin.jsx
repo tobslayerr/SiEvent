@@ -17,9 +17,8 @@ const ToLogin = () => {
       </p>
 
       <motion.button
-        className="mt-5 bg-black text-white px-6 py-2 rounded-full text-sm sm:text-base font-medium hover:bg-gray-800 transition duration-300"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        className="mt-5 bg-black text-white px-6 py-2 rounded-full text-sm sm:text-base font-medium transition duration-300 hover:bg-gray-800 active:scale-90"
+        whileTap={{ scale: 0.8, transition: { duration: 0.0 } }}
       >
         Login
       </motion.button>
