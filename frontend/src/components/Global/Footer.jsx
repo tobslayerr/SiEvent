@@ -27,7 +27,7 @@ const Footer = () => {
       </div>
 
       <div className="bg-black text-white text-center py-4 text-sm font-semibold">
-        ©2024. SiEvent. All Rights Reserved.
+        ©2025. SiEvent. All Rights Reserved.
       </div>
     </footer>
   );

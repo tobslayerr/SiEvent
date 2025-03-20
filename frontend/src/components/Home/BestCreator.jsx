@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 
 const creators = [
@@ -11,30 +10,19 @@ const creators = [
 
 const BestCreator = () => {
   return (
-    <motion.div
-      className="max-w-[90%] sm:max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8 bg-white shadow-md rounded-2xl mt-10"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
-    >
+    <div className="max-w-[90%] sm:max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8 bg-white shadow-md rounded-2xl mt-10">
       <h2 className="text-2xl font-bold text-center mb-8">Best Creator</h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-        {creators.map((creator, index) => (
-          <motion.div
+        {creators.map((creator) => (
+          <div
             key={creator.id}
-            className="bg-gray-100 p-5 rounded-lg shadow flex flex-col items-center text-center cursor-pointer"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
+            className="bg-gray-100 p-5 rounded-lg shadow flex flex-col items-center text-center cursor-pointer transition duration-300 hover:shadow-lg hover:bg-gray-200"
           >
-            <motion.img
+            <img
               src={creator.image}
               alt={creator.name}
-              className="w-20 h-20 object-cover rounded-full mb-3"
-              whileTap={{ scale: 0.9, transition: { duration: 0.1 } }}
+              className="w-20 h-20 object-cover rounded-full mb-3 transition active:scale-90"
             />
             <h3 className="text-sm font-semibold">{creator.name}</h3>
             <div className="flex items-center justify-center gap-2 mt-1 text-xs sm:text-sm text-gray-600">
@@ -44,26 +32,24 @@ const BestCreator = () => {
                 {creator.rating}
               </span>
             </div>
-            <motion.button
+            <button
               className="mt-3 bg-black text-white px-4 py-2 rounded-md text-xs font-medium transition duration-300 hover:bg-gray-800 active:scale-90"
-              whileTap={{ scale: 0.1, transition: { duration: 0.1 } }}
             >
               Follow
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
         ))}
       </div>
 
       <div className="flex justify-center mt-8">
-        <motion.button
+        <button
           className="border border-black px-6 py-3 rounded-md text-sm font-medium transition duration-300 hover:bg-black hover:text-white active:scale-90"
-          whileTap={{ scale: 0.2, transition: { duration: 0.1 } }}
         >
           Selengkapnya
-        </motion.button>
+        </button>
       </div>
-    </motion.div>
-  )
-}
+    </div>
+  );
+};
 
 export default BestCreator;
