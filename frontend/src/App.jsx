@@ -7,6 +7,8 @@ import Bantuan from "./pages/Bantuan";
 import Event from "./pages/Event";
 import Footer from "./components/Global/Footer";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const LoadingScreen = () => {
   return (
@@ -36,6 +38,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/event" element={<Event />} />
           <Route path="/bantuan" element={<Bantuan />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
