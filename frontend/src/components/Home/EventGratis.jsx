@@ -28,6 +28,7 @@ const EventGratis = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
+            whileTap={{ scale: 0.98, transition: { duration: 0.0 } }}
             whileHover={{ scale: 1.05 }}
           >
             <img
@@ -48,6 +49,8 @@ const EventGratis = () => {
 
       <div className="flex justify-center mt-8">
         <motion.button
+          className="border border-black px-6 py-3 rounded-md text-sm font-medium transition duration-300 hover:bg-black hover:text-white active:scale-90"
+          whileTap={{ scale: 0.38, transition: { duration: 0.13 } }}
           className="border border-black px-6 py-3 rounded-md text-sm font-medium hover:bg-black hover:text-white transition duration-300 active:scale-90"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 
@@ -45,6 +46,8 @@ const BestCreator = () => {
               </span>
             </div>
             <motion.button
+              className="mt-3 bg-black text-white px-4 py-2 rounded-md text-xs font-medium transition duration-300 hover:bg-gray-800 active:scale-90"
+              whileTap={{ scale: 0.8, transition: { duration: 0.0 } }}
               className="mt-3 bg-black text-white px-4 py-2 rounded-md text-xs font-medium hover:bg-gray-800 transition duration-300 active:scale-90"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -58,6 +61,8 @@ const BestCreator = () => {
 
       <div className="flex justify-center mt-8">
         <motion.button
+          className="border border-black px-6 py-3 rounded-md text-sm font-medium transition duration-300 hover:bg-black hover:text-white active:scale-90"
+          whileTap={{ scale: 0.38, transition: { duration: 0.13 } }}
           className="border border-black px-6 py-3 rounded-md text-sm font-medium hover:bg-black hover:text-white transition duration-300 active:scale-90"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -71,4 +76,3 @@ const BestCreator = () => {
 };
 
 export default BestCreator;
-
