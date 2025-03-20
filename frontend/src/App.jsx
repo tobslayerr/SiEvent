@@ -1,23 +1,47 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from './components/Global/Navbar';
-import Home from './pages/Home'
-import Bantuan from './pages/Bantuan'
-import Event from './pages/Event'
-import Footer from './components/Global/Footer';
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { PulseLoader } from "react-spinners";
+import Navbar from "./components/Global/Navbar";
+import Home from "./pages/Home";
+import Bantuan from "./pages/Bantuan";
+import Event from "./pages/Event";
+import Footer from "./components/Global/Footer";
+import NotFound from "./pages/NotFound";
+
+const LoadingScreen = () => {
+  return (
+    <div className="flex items-center justify-center h-screen">
+      <PulseLoader size={10} color="gray" />
+    </div>
+  );
+};
 
 const App = () => {
+  const [loading, setLoading] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timeout);
+  }, [location]);
+
   return (
     <div className="pt-17">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/event" element={<Event />} />
-        <Route path="/bantuan" element={<Bantuan />} />
-      </Routes>
+      {loading ? (
+        <LoadingScreen />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/bantuan" element={<Bantuan />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      )}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
