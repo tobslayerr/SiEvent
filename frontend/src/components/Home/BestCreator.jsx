@@ -24,16 +24,17 @@ const BestCreator = () => {
         {creators.map((creator, index) => (
           <motion.div
             key={creator.id}
-            className="bg-gray-100 p-5 rounded-lg shadow flex flex-col items-center text-center"
+            className="bg-gray-100 p-5 rounded-lg shadow flex flex-col items-center text-center cursor-pointer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
           >
-            <img
+            <motion.img
               src={creator.image}
               alt={creator.name}
               className="w-20 h-20 object-cover rounded-full mb-3"
+              whileTap={{ scale: 0.9, transition: { duration: 0.1 } }}
             />
             <h3 className="text-sm font-semibold">{creator.name}</h3>
             <div className="flex items-center justify-center gap-2 mt-1 text-xs sm:text-sm text-gray-600">
@@ -45,7 +46,7 @@ const BestCreator = () => {
             </div>
             <motion.button
               className="mt-3 bg-black text-white px-4 py-2 rounded-md text-xs font-medium transition duration-300 hover:bg-gray-800 active:scale-90"
-              whileTap={{ scale: 0.8, transition: { duration: 0.0 } }}
+              whileTap={{ scale: 0.1, transition: { duration: 0.1 } }}
             >
               Follow
             </motion.button>
@@ -56,13 +57,13 @@ const BestCreator = () => {
       <div className="flex justify-center mt-8">
         <motion.button
           className="border border-black px-6 py-3 rounded-md text-sm font-medium transition duration-300 hover:bg-black hover:text-white active:scale-90"
-          whileTap={{ scale: 0.38, transition: { duration: 0.13 } }}
+          whileTap={{ scale: 0.2, transition: { duration: 0.1 } }}
         >
           Selengkapnya
         </motion.button>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
 export default BestCreator;
