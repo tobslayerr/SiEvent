@@ -78,6 +78,7 @@ const Register = () => {
     }
 
     toast.success("Registrasi berhasil", {
+      position: "top-right",
       autoClose: 2000,
       onClose: () => navigate("/login"),
     });
@@ -85,6 +86,7 @@ const Register = () => {
 
   const handleGoogleRegister = () => {
     toast.success("Register dengan Google berhasil", {
+      position: "top-right",
       autoClose: 2000,
       onClose: () => navigate("/login"),
     });

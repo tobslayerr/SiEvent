@@ -9,7 +9,6 @@ const ToLogin = () => {
       <p className="text-sm sm:text-base text-gray-600 text-center mt-2">
         Log in untuk membuat akun
       </p>
-      
       <Link to="/login" className="mt-5 bg-black text-white px-6 py-2 rounded-full text-sm sm:text-base font-medium transition duration-300 hover:bg-gray-800 active:scale-90">
         Login
       </Link>
@@ -18,3 +17,4 @@ const ToLogin = () => {
 };
 
 export default ToLogin;
+
