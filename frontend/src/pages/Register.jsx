@@ -129,6 +129,14 @@ const Register = () => {
           <FcGoogle className="text-xl" />
           <span>Register dengan Google</span>
         </button>
+        
+        <p className="text-center mt-4 text-sm">Sudah punya akun? <a href="/login" className="text-black font-medium hover:underline">Login</a></p>
+        <button
+          onClick={() => navigate("/")}
+          className="w-full mt-4 bg-gray-300 text-black py-2 rounded-full font-medium transition hover:bg-black hover:text-white border border-black active:scale-90 duration-300"
+        >
+          Back to Home
+        </button>
       </div>
     </div>
   );
