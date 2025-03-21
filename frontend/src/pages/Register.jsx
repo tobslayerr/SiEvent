@@ -78,7 +78,6 @@ const Register = () => {
     }
 
     toast.success("Registrasi berhasil", {
-      position: "top-right",
       autoClose: 2000,
       onClose: () => navigate("/login"),
     });
@@ -86,7 +85,6 @@ const Register = () => {
 
   const handleGoogleRegister = () => {
     toast.success("Register dengan Google berhasil", {
-      position: "top-right",
       autoClose: 2000,
       onClose: () => navigate("/login"),
     });
@@ -130,6 +128,14 @@ const Register = () => {
         <button onClick={handleGoogleRegister} className="w-full flex items-center justify-center gap-2 bg-white border border-gray-400 py-2 rounded-full mt-3 hover:bg-gray-100 transition">
           <FcGoogle className="text-xl" />
           <span>Register dengan Google</span>
+        </button>
+        
+        <p className="text-center mt-4 text-sm">Sudah punya akun? <a href="/login" className="text-black font-medium hover:underline">Login</a></p>
+        <button
+          onClick={() => navigate("/")}
+          className="w-full mt-4 bg-gray-300 text-black py-2 rounded-full font-medium transition hover:bg-black hover:text-white border border-black active:scale-90 duration-300"
+        >
+          Back to Home
         </button>
       </div>
     </div>
